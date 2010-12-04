@@ -9,7 +9,7 @@ public class Settings {
 
 	private static final String DEFAULT_USERNAME = "rapidftr";
 	private static final String DEFAULT_HOST = "dev.rapidftr.com";
-	private static final String DEFAULT_PORT = "80";
+	private static final String DEFAULT_PORT = "3000";
 
 	private static final String AUTHORISATION_TOKEN = "authorisation.token";
 	private static final String CURRENT_USER = "current.user";

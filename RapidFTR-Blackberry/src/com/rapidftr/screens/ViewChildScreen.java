@@ -27,6 +27,7 @@ import net.rim.device.api.ui.decor.Border;
 import net.rim.device.api.ui.decor.BorderFactory;
 
 import com.rapidftr.controllers.ChildController;
+import com.rapidftr.controls.AudioControl;
 import com.rapidftr.datastore.FormStore;
 import com.rapidftr.model.Child;
 import com.rapidftr.model.Form;
@@ -97,11 +98,19 @@ public class ViewChildScreen extends CustomScreen {
 						continue;
 					}
 
-					key = key.replace('_', ' ');
-
-					add(BoldRichTextField.getSemiBoldRichTextField(field
-							.displayLabel()
-							+ " :", value));
+					
+					if (key.equals("recorded_audio")) {
+						HorizontalFieldManager horizontalFieldManager = new HorizontalFieldManager(
+								Manager.HORIZONTAL_SCROLLBAR);
+						horizontalFieldManager.add(new LabelField(field.displayLabel()));
+						horizontalFieldManager.add(new AudioControl(null));
+						add(horizontalFieldManager);
+					}
+					else {
+						add(BoldRichTextField.getSemiBoldRichTextField(field
+								.displayLabel()
+								+ " :", value));
+					}
 					add(new SeparatorField());
 					index++;
 				}

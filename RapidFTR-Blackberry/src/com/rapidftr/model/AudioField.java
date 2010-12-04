@@ -31,7 +31,7 @@ public class AudioField extends FormField implements AudioRecordListener{
 	private VerticalFieldManager manager;
 	private ManageChildScreen manageChildScreen;
 
-	protected AudioField(String name) {
+	public AudioField(String name) {
 		super(name, "Audio", TYPE);
 	}
 	
